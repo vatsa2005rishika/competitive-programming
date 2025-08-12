@@ -1,0 +1,28 @@
+//a sorted list of packaged weights in a wearhouse ,check if a package of a given weight is present or not and return its index//
+
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int weights[6] = {10, 20, 31, 49, 53, 68};
+    cout<< "Enter the weight to search: ";
+    int x;
+    cin >> x;
+    int low= 0, high = 5, mid;
+    while(low <= high) {
+        mid = (low + high) / 2; 
+        if(weights[mid] == x) {
+            cout << "Weight found at index: " << mid << endl;
+            return 0;
+        }
+        else if(weights[mid] < x) {
+            low = mid + 1;
+        }
+        else {
+            high = mid - 1;
+        }
+    }
+    cout << "Weight not found." << endl;
+    return 0;
+}
