@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main(){
+    int n,search,i,j,step;
+    cout<<"Enter the number of elements: ";
+    cin>>n;
+    int arr[n];
+    cout<<"Enter the elements: ";
+    for(i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    cout<<"Enter the element to search: ";
+    cin>>search;
+    step=sqrt(n);
+    i=0;
+    for(i=0;i<n;i+=step){
+        if (arr[i]>=search)
+        {
+            for(j=i;j>=i-step;j--){
+                if(arr[j]==search){
+                    cout<<"Element found at index "<<j<<endl;
+                    return 0;
+                }
+            }
+        }
+    }
+    cout<<"Element not found"<<endl;
+    return 0;
+}
