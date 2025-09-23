@@ -6,13 +6,12 @@ int main() {
     string str;
     cout << "Enter a string: ";
     getline(cin, str);
-    for (char &c : str) {
-        c = tolower(c);
+    string result;
+    for (char c : str) {
+        if (c != ' ') { // Remove spaces
+            result += c;
+        }
     }
-    cout << "String in lowercase: " << str << endl;
-    for (char &c : str) {
-        c = toupper(c);
-    }
-    cout << "String in uppercase: " << str << endl;
+    cout << "String without spaces: " << result << endl;
     return 0;
-}  
+}
