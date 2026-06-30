@@ -30,4 +30,3 @@ class Solution(object):
             else:
                 r = m - 1
         return -1
- 
